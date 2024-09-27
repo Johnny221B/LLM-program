@@ -14,6 +14,7 @@ def format_code_files_to_json(file_paths, times, output_file):
     # 遍历文件路径和时间值
     for file_path, time in zip(file_paths, times):
         code = read_file(file_path)
+        code = code.strip()
         formatted_data.append({"code": code.strip(), "time": time})
     
     # 写入JSON文件
